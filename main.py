@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, request
 import os
 from pdf_reader import read_pdf
 from qa_engine import answer_question
@@ -45,11 +45,21 @@ def home():
                 )
             else:
                 response = " PDF upload"
-
-    return render_template(
-        "index.html",
-        response=response
-    )
+                
+return f"""
+<html>
+<body>
+<h1>AI Research Assistant</h1>
+<form method="POST" enctype="multipart/form-data">
+<input type="file" name="pdf"><br><br>
+<input type="text" name="question" 
+placeholder="Question likho..."><br><br>
+<input type="submit" value="Submit">
+</form>
+<p>{response}</p>
+</body>
+</html>
+"""
 
 
 if __name__ == "__main__":
