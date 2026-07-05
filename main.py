@@ -46,7 +46,7 @@ def home():
             else:
                 response = " PDF upload"
                 
-return f"""
+     return f"""
 <html>
 <body>
 <h1>AI Research Assistant</h1>
@@ -59,7 +59,7 @@ placeholder="Question likho..."><br><br>
 <p>{response}</p>
 </body>
 </html>
-"""
+    """
 
 
 if __name__ == "__main__":
